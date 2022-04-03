@@ -11,7 +11,7 @@ order_payments as (
         order_id,
         sum(case when status = 'success' then amount end) as amount
 
-    from payments
+    from amos_dbt.payments
     group by 1
 ),
 
@@ -23,8 +23,8 @@ final as (
         orders.order_date,
         coalesce(order_payments.amount, 0) as amount
 
-    from orders
-    left join order_payments using (order_id)
+    from amos_dbt.orders
+    left join amos_dbt.order_payments using (order_id)
 )
 
 select * from final

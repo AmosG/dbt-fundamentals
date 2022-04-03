@@ -24,7 +24,7 @@ customer_orders as (
         count(order_id) as number_of_orders,
         sum(amount) as lifetime_value
 
-    from orders
+    from amos_dbt.orders
 
     group by 1
 
@@ -42,7 +42,7 @@ final as (
         coalesce(customer_orders.number_of_orders, 0) as number_of_orders
         customer_orders.lifetime_value
 
-    from customers
+    from amos_dbt.customers
 
     left join customer_orders using (customer_id)
 
