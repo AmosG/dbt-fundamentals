@@ -11,7 +11,7 @@ order_payments as (
         order_id,
         sum(case when status = 'success' then amount end) as amount
 
-    from amos_dbt.payments
+    from amos_dbt.payment
     group by 1
 ),
 
