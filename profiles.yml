@@ -1,0 +1,12 @@
+databricks:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      host: e2-demo-emea.cloud.databricks.com
+      user: amos.gutman@databricks.com
+      password: dapi76412b0917c515ac67bbf0fc83c784d6
+      port: 443
+      dbname: amos_dbt
+      schema: amos_dbt
+      threads: 4
