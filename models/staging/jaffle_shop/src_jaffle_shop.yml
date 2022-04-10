@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: jaffle_shop
-    schema: dbt_amos
+    schema: amos_dbt
     tables:
       - name: customers
-      # - name: orders
+      - name: orders
