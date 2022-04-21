@@ -1,5 +1,15 @@
+default:
+ target: dev
+ outputs:
+   dev:
+     type: databricks
+     method: http
+     schema: "default"
+     host: "{{ env_var('DBT_HOST') }}"
+     http_path: "sql/protocolv1/o/{{ env_var('DBT_ORG_ID') }}/{{ env_var('DBT_CLUSTER_ID') }}"
+     token: "{{ env_var('DBT_ACCESS_TOKEN') }}"
 databricks:
-  target: dev
+  target: qna
   outputs:
     dev:
       type: databricks
